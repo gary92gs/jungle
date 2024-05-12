@@ -3,7 +3,6 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-  <!-- if enhanced cart has no items -->
   <% if enhanced_cart.length == 0 %>
     <div class="empty-cart-message-container">
       <h4>You have no items in your cart!</h4>
@@ -14,7 +13,6 @@
       </h4>
     </div>
   <% end %>
-  <!-- if enhanced_cart has items -->
   <% if enhanced_cart.length > 0 %>
     <div class="panel panel-default items">
       <table class="table table-bordered">

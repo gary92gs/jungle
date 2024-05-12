@@ -53,6 +53,17 @@ main section.categories-show {
           background: white;
           color: rgba(0, 130, 29, 0.7);
         }
+        
+        .quantity-0 {
+          color: rgba(0, 130, 29, 0.4);
+          cursor: default;
+        }
+
+        .soldout {
+          background-color: rgba(224, 14, 14, 0.8);
+          color: white;
+          cursor: default;
+        }
       }
       img {
         width: 100%;

@@ -7,9 +7,23 @@
     </h1>
   <% end%>
   <div>
-    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
-    method: :post do %>
-      <%= fa_icon "shopping-cart", text: 'Add' %> 
+    <!-- if product.quantity > 1 -->
+    <% if product.quantity > 1 %>
+      <%= button_to add_item_cart_path(product_id: product.id), class: 'btn' ,
+      method: :post do %>
+        <%= fa_icon "shopping-cart", text: 'Add' %> 
+      <% end %>
     <% end %>
+    <!-- if product.quantity == 0 -->
+    <% if product.quantity == 0 %>
+      <button class="soldout">
+        <%= fa_icon "shopping-cart", text: 'Sold Out' %> 
+      </button>
+      <button class="btn quantity-0">
+        <%= fa_icon "shopping-cart", text: 'Add' %> 
+      </button>
+    <% end %>
+
+
   </div>
 </article>
