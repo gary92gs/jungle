@@ -66,11 +66,18 @@
           My Cart (<%= cart.size %>) <% end %>
         </li>
 
-        <!-- if logged in -->
-        <%= link_to "Log Out", "/", class: "nav-item about" %>
-
-        <!-- if logged out -->
-        <%= link_to "Log In", "/users", class: "nav-item about" %>
+        <% if logged_in? %>
+          <button class="btn users">
+            <%= link_to 'Logout', "/logout", method: :delete, data: { confirm: 'Are you sure you want to logout?' }, class: "nav-item about" %>
+          </button>
+        <% else %>
+          <button class="btn users">
+            <%= link_to "Log In", "/login", class: "nav-item about" %>
+          </button>
+          <button class="btn users">
+            <%= link_to "Register", "/users/new", class: "nav-item about" %>
+          </button>
+        <% end %>
 
       </ul>
     </div>
