@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      # CREATE SESSION HERE
+      log_in(@user)
       redirect_to "/", notice: 'User created!'
     else
       render :new

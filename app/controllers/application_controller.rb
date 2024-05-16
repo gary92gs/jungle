@@ -39,4 +39,17 @@ class ApplicationController < ActionController::Base
     }
     cookies[:cart]
   end
+
+  def log_in(user)
+    session[:user_id] = user.id
+    Rails.logger.info "Session set for user: #{session[:user_id]}"
+  end
+
+  def log_out
+    Rails.logger.info "Logging out user: #{session[:user_id]}"
+    session.delete(:user_id)
+    @current_user = nil
+    Rails.logger.info "Session cleared for user: #{session[:user_id]}" 
+  end
+
 end
