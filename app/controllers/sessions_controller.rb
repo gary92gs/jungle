@@ -5,9 +5,7 @@ class SessionsController < ApplicationController
 
   def create
 
-    user = User.find_by(email: params[:session][:email])
-
-    if user && user.authenticate(params[:session][:password])
+    if user = User.authenticate_with_credentials(params[:session][email], params[:session][:password])
       log_in(user)
       Rails.logger.info "User logged in: #{session[:user_id]}"
       redirect_to root_path, notice: 'Logged in successfully!'
