@@ -9,7 +9,7 @@ module.exports = defineConfig({
         /* ... */
       })
     },
-    baseUrl: "http://localhost:3000/", //DOESN'T DO ANYTHING, NO FUCKING CLUE WHY
+    // baseUrl: "http://localhost:3000/", //DOESN'T DO ANYTHING, NO FUCKING CLUE WHY
     specPattern: "cypress/integration/**/*.cy.{js,jsx,ts,tsx}", 
   },
   screenshotsFolder: "tmp/cypress_screenshots",

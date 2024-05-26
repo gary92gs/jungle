@@ -12,6 +12,9 @@ describe('Home Page', () => {
 
   beforeEach(() => {
     cy.visit("/");
+    cy.document().then((doc) => {
+      console.log(doc.documentElement.outerHTML); // Log the entire HTML document
+    });
   });
 
   it('should visit the home page', () => {
