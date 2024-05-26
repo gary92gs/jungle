@@ -57,6 +57,8 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 5.1'
   gem 'net-smtp', require: false
+  gem "cypress-rails"
+  gem 'database_cleaner-active_record'
 end
 
 group :development do
@@ -68,7 +70,6 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
 end
 
 group :test do
